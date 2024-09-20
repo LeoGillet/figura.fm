@@ -10,6 +10,7 @@ struct TrackRow: View {
     var track: LastFMAPITrack
     
     var body: some View {
+        let nowPlaying = track.attr?.nowplaying == "true"
         HStack {
             /*
             song.cover
@@ -41,9 +42,15 @@ struct TrackRow: View {
             }
             
             Spacer()
+            if (nowPlaying) {
+                Image(systemName: "waveform")
+                    .symbolEffect(.variableColor.iterative.dimInactiveLayers.nonReversing)
+                
+            }
         }
         .padding(.horizontal)
-        .background(Color(.systemBackground))
+        .padding(.vertical, 5)
+        .background(nowPlaying ? Color(Color.yellowBg1) : Color(.systemBackground))
     }
     
 }

@@ -29,7 +29,7 @@ struct ScrobblesView: View {
                             }
                             .padding()
                         } else {
-                            VStack(spacing: 10) {
+                            VStack(spacing: 5) {
                                 ForEach(tracks) { track in
                                     HStack {
                                         TrackRow(track: track)
@@ -46,7 +46,7 @@ struct ScrobblesView: View {
                     }
                     .refreshable {
                         await trackViewModel.loadRecentTracks(user: $settings.user.wrappedValue)
-                            tracks = trackViewModel.tracks
+                        tracks = trackViewModel.tracks
                     }
                 }
                 .sheet(isPresented: $showSettings) {

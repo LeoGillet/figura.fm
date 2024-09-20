@@ -78,8 +78,8 @@ struct LastFMAPITrackAttr: Codable {
     let nowplaying: String
 }
 
-struct LastFMAPITrack: Codable, Identifiable {
-    var id: String {"\(artist.text) - \(name)"}
+struct LastFMAPITrack: Identifiable, Codable {
+    var id: String { "\(name) (\(mbid))" }
     let artist: LastFMAPIArtist
     let streamable: String
     let image: [LastFMAPIImage]

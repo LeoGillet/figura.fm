@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -52,6 +52,10 @@
 		12D18EE52C9D8C68006DA5AE /* TrackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		12D18EE92C9DBEE4006DA5AE /* Extensions */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Extensions; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		12B6613F2C8F7F190095D2AB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -92,6 +96,7 @@
 		12B661442C8F7F190095D2AB /* fm-gallery */ = {
 			isa = PBXGroup;
 			children = (
+				12D18EE92C9DBEE4006DA5AE /* Extensions */,
 				122436822C9C40900020A178 /* Settings.swift */,
 				122436802C9C40060020A178 /* Request.swift */,
 				12D18EE32C9D8C4F006DA5AE /* Track.swift */,
@@ -147,6 +152,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				12D18EE92C9DBEE4006DA5AE /* Extensions */,
 			);
 			name = "fm-gallery";
 			productName = "fm-gallery";
