@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12178C342CA2F0A30027D3FB /* LastFMAPITypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12178C332CA2F0970027D3FB /* LastFMAPITypes.swift */; };
+		12178C362CA2F0DD0027D3FB /* PropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12178C352CA2F0DA0027D3FB /* PropertyWrapper.swift */; };
+		12178C382CA2F1C60027D3FB /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12178C372CA2F1C30027D3FB /* Album.swift */; };
 		1224367D2C9C2A930020A178 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1224367C2C9C2A910020A178 /* SettingsView.swift */; };
 		122436812C9C40080020A178 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122436802C9C40060020A178 /* Request.swift */; };
 		122436832C9C40910020A178 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122436822C9C40900020A178 /* Settings.swift */; };
 		122436882C9C63A50020A178 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 122436872C9C63A50020A178 /* LaunchScreen.storyboard */; };
+		1224F9B62CA2FA4500FFA092 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12178C3B2CA2F5690027D3FB /* ViewModel.swift */; };
 		12AF48872C9C239400FFD158 /* ChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AF48862C9C238C00FFD158 /* ChartsView.swift */; };
 		12AF48892C9C258D00FFD158 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AF48882C9C258A00FFD158 /* Components.swift */; };
 		12B661462C8F7F190095D2AB /* figurafmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B661452C8F7F190095D2AB /* figurafmApp.swift */; };
@@ -19,7 +23,6 @@
 		12B6614D2C8F7F1B0095D2AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12B6614C2C8F7F1B0095D2AB /* Preview Assets.xcassets */; };
 		12B661572C8F7F1B0095D2AB /* fm_galleryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B661562C8F7F1B0095D2AB /* fm_galleryTests.swift */; };
 		12D18EE42C9D8C4F006DA5AE /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D18EE32C9D8C4F006DA5AE /* Track.swift */; };
-		12D18EE62C9D8C6B006DA5AE /* TrackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D18EE52C9D8C68006DA5AE /* TrackViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		12178C332CA2F0970027D3FB /* LastFMAPITypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastFMAPITypes.swift; sourceTree = "<group>"; };
+		12178C352CA2F0DA0027D3FB /* PropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyWrapper.swift; sourceTree = "<group>"; };
+		12178C372CA2F1C30027D3FB /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		12178C3B2CA2F5690027D3FB /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		1224367C2C9C2A910020A178 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		122436802C9C40060020A178 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		122436822C9C40900020A178 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -49,7 +56,6 @@
 		12B661602C8F7F1B0095D2AB /* fm_galleryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fm_galleryUITests.swift; sourceTree = "<group>"; };
 		12B661622C8F7F1B0095D2AB /* fm_galleryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fm_galleryUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		12D18EE32C9D8C4F006DA5AE /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
-		12D18EE52C9D8C68006DA5AE /* TrackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -96,19 +102,22 @@
 		12B661442C8F7F190095D2AB /* fm-gallery */ = {
 			isa = PBXGroup;
 			children = (
-				12D18EE92C9DBEE4006DA5AE /* Extensions */,
-				122436822C9C40900020A178 /* Settings.swift */,
-				122436802C9C40060020A178 /* Request.swift */,
-				12D18EE32C9D8C4F006DA5AE /* Track.swift */,
-				12D18EE52C9D8C68006DA5AE /* TrackViewModel.swift */,
-				1224367C2C9C2A910020A178 /* SettingsView.swift */,
-				12AF48882C9C258A00FFD158 /* Components.swift */,
-				12AF48862C9C238C00FFD158 /* ChartsView.swift */,
-				12B661452C8F7F190095D2AB /* figurafmApp.swift */,
-				12B661472C8F7F190095D2AB /* ScrobblesView.swift */,
-				12B661492C8F7F1B0095D2AB /* Assets.xcassets */,
-				12B6614B2C8F7F1B0095D2AB /* Preview Content */,
 				122436872C9C63A50020A178 /* LaunchScreen.storyboard */,
+				12178C372CA2F1C30027D3FB /* Album.swift */,
+				12AF48862C9C238C00FFD158 /* ChartsView.swift */,
+				12AF48882C9C258A00FFD158 /* Components.swift */,
+				12B661452C8F7F190095D2AB /* figurafmApp.swift */,
+				12178C332CA2F0970027D3FB /* LastFMAPITypes.swift */,
+				12178C352CA2F0DA0027D3FB /* PropertyWrapper.swift */,
+				122436802C9C40060020A178 /* Request.swift */,
+				12B661472C8F7F190095D2AB /* ScrobblesView.swift */,
+				122436822C9C40900020A178 /* Settings.swift */,
+				1224367C2C9C2A910020A178 /* SettingsView.swift */,
+				12D18EE32C9D8C4F006DA5AE /* Track.swift */,
+				12178C3B2CA2F5690027D3FB /* ViewModel.swift */,
+				12B661492C8F7F1B0095D2AB /* Assets.xcassets */,
+				12D18EE92C9DBEE4006DA5AE /* Extensions */,
+				12B6614B2C8F7F1B0095D2AB /* Preview Content */,
 			);
 			path = "fm-gallery";
 			sourceTree = "<group>";
@@ -243,13 +252,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12D18EE62C9D8C6B006DA5AE /* TrackViewModel.swift in Sources */,
+				1224F9B62CA2FA4500FFA092 /* ViewModel.swift in Sources */,
+				12178C382CA2F1C60027D3FB /* Album.swift in Sources */,
 				1224367D2C9C2A930020A178 /* SettingsView.swift in Sources */,
+				12178C362CA2F0DD0027D3FB /* PropertyWrapper.swift in Sources */,
 				122436832C9C40910020A178 /* Settings.swift in Sources */,
 				12B661482C8F7F190095D2AB /* ScrobblesView.swift in Sources */,
 				12AF48892C9C258D00FFD158 /* Components.swift in Sources */,
 				12D18EE42C9D8C4F006DA5AE /* Track.swift in Sources */,
 				122436812C9C40080020A178 /* Request.swift in Sources */,
+				12178C342CA2F0A30027D3FB /* LastFMAPITypes.swift in Sources */,
 				12B661462C8F7F190095D2AB /* figurafmApp.swift in Sources */,
 				12AF48872C9C239400FFD158 /* ChartsView.swift in Sources */,
 			);
@@ -400,25 +412,26 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"fm-gallery/Preview Content\"";
 				DEVELOPMENT_TEAM = PSGNRJD6BD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "fm-gallery/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = figura.fm;
+				INFOPLIST_KEY_CFBundleDisplayName = Figura.fm;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.leogillet.fm-gallery";
+				PRODUCT_BUNDLE_IDENTIFIER = com.leogillet.figura;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -436,25 +449,26 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"fm-gallery/Preview Content\"";
 				DEVELOPMENT_TEAM = PSGNRJD6BD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "fm-gallery/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = figura.fm;
+				INFOPLIST_KEY_CFBundleDisplayName = Figura.fm;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.leogillet.fm-gallery";
+				PRODUCT_BUNDLE_IDENTIFIER = com.leogillet.figura;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

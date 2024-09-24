@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ScrobblesView: View {
-    @StateObject private var trackViewModel = TracksViewModel()
     @State private var showSettings = false
     @State private var tracks: [LastFMAPITrack] = []
     @EnvironmentObject var settings: Settings
+    @StateObject private var trackHistoryViewModel = TrackHistoryViewModel()
     
     var body: some View {
         VStack(spacing: 0) {
@@ -21,7 +21,7 @@ struct ScrobblesView: View {
             if (settings.apiKey != "") {
                 NavigationView {
                     ScrollView {
-                        if let error = trackViewModel.errorMessage {
+                        if let error = trackHistoryViewModel.errorMessage {
                             VStack {
                                 Text("Error: \(error)")
                                     .foregroundStyle(.red)
@@ -38,21 +38,21 @@ struct ScrobblesView: View {
                             }
                             .task {
                                 if ($settings.user.wrappedValue != "") {
-                                    await trackViewModel.loadRecentTracks(user: $settings.user.wrappedValue)
-                                    tracks = trackViewModel.tracks
+                                    await trackHistoryViewModel.loadRecentTracks(user: $settings.user.wrappedValue)
+                                    tracks = trackHistoryViewModel.tracks
                                 }
                             }
                         }
                     }
                     .refreshable {
-                        await trackViewModel.loadRecentTracks(user: $settings.user.wrappedValue)
-                        tracks = trackViewModel.tracks
+                        await trackHistoryViewModel.loadRecentTracks(user: $settings.user.wrappedValue)
+                        tracks = trackHistoryViewModel.tracks
                     }
                 }
-                .sheet(isPresented: $showSettings) {
-                    SettingsView()
-                }
             }
+        }
+        .sheet(isPresented: $showSettings) {
+            SettingsView()
         }
     }
 }

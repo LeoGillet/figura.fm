@@ -7,6 +7,16 @@
 
 import SwiftUI
 
+enum Period: String, CaseIterable, Identifiable {
+    case overall
+    case week_1 = "7day"
+    case month_1 = "1month"
+    case month_3 = "3month"
+    case month_6 = "6month"
+    case year = "12month"
+    var id: Self { self }
+}
+
 struct TopBar: View {
     var title: String = "figura.fm"
     var onSettingsTap: () -> Void

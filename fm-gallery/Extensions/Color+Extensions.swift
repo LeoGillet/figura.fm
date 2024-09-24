@@ -9,4 +9,5 @@ import SwiftUI
 
 extension Color {
     static let yellowBg1 = Color("Yellow Background 1")
+    
 }

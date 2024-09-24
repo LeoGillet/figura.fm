@@ -19,13 +19,14 @@ struct TrackRow: View {
                 .frame(width: 50, height: 50)
                 .cornerRadius(2)
             */
-            AsyncImage(url: URL(string: track.image[track.image.count - 1].text)) {
+            AsyncImage(url: URL(string: track.images[track.images.count - 1].text)) {
                 image in image.resizable()
             } placeholder: {
                 ProgressView()
             }
                 .frame(width: 50, height: 50)
                 .cornerRadius(2)
+                .shadow(radius: 2)
             
             VStack(alignment: .leading) {
                 Text(track.name)
