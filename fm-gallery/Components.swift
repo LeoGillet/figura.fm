@@ -23,8 +23,11 @@ struct TopBar: View {
     
     var body: some View {
         HStack {
-            Text(title)
-                .font(.largeTitle)
+            Image("SloganColored")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(height: 40)
+                .padding(.top, 15)
             
             Spacer()
             

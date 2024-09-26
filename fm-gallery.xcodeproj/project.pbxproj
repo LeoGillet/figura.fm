@@ -15,6 +15,7 @@
 		122436832C9C40910020A178 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122436822C9C40900020A178 /* Settings.swift */; };
 		122436882C9C63A50020A178 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 122436872C9C63A50020A178 /* LaunchScreen.storyboard */; };
 		1224F9B62CA2FA4500FFA092 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12178C3B2CA2F5690027D3FB /* ViewModel.swift */; };
+		125F10332CA56AD9000A49E3 /* Assets.xcassets in Sources */ = {isa = PBXBuildFile; fileRef = 12B661492C8F7F1B0095D2AB /* Assets.xcassets */; };
 		12AF48872C9C239400FFD158 /* ChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AF48862C9C238C00FFD158 /* ChartsView.swift */; };
 		12AF48892C9C258D00FFD158 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AF48882C9C258A00FFD158 /* Components.swift */; };
 		12B661462C8F7F190095D2AB /* figurafmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B661452C8F7F190095D2AB /* figurafmApp.swift */; };
@@ -195,6 +196,9 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				KnownAssetTags = (
+					sloganColored,
+				);
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
@@ -252,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				125F10332CA56AD9000A49E3 /* Assets.xcassets in Sources */,
 				1224F9B62CA2FA4500FFA092 /* ViewModel.swift in Sources */,
 				12178C382CA2F1C60027D3FB /* Album.swift in Sources */,
 				1224367D2C9C2A930020A178 /* SettingsView.swift in Sources */,
