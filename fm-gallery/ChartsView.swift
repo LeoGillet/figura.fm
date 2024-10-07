@@ -8,18 +8,26 @@ import SwiftUI
 
 struct ChartsView: View {
     @StateObject private var topAlbumViewModel = TopAlbumViewModel()
+    @StateObject private var topArtistViewModel = TopArtistViewModel()
     @State private var showSettings = false
     @State private var albums: [LastFMAPITopAlbumsAlbum] = []
+    @State private var artists: [LastFMAPITopArtistsArtist] = []
     @EnvironmentObject var settings: Settings
     
-    @State var topAlbumsSelectedPeriod: Period = .month_1
-    @State var topArtistsSelectedPeriod: Period = .month_1
-    @State var topTracksSelectedPeriod: Period = .month_1
+    @State var topSelectedPeriod: Period = .month_1
     
     func updateTopAlbums(period: String) async -> [LastFMAPITopAlbumsAlbum] {
         if ($settings.user.wrappedValue != "") {
             await topAlbumViewModel.loadTopAlbums(user: $settings.user.wrappedValue, period: period)
             return topAlbumViewModel.albums
+        }
+        return []
+    }
+    
+    func updateTopArtists(period: String) async -> [LastFMAPITopArtistsArtist] {
+        if ($settings.user.wrappedValue != "") {
+            await topArtistViewModel.loadTopArtists(user: $settings.user.wrappedValue, period: period)
+            return topArtistViewModel.artists
         }
         return []
     }
@@ -48,7 +56,7 @@ struct ChartsView: View {
                                     
                                     Spacer()
                                     
-                                    Picker("Period", selection: $topAlbumsSelectedPeriod) {
+                                    Picker("Period", selection: $topSelectedPeriod) {
                                         Text("7 days").tag(Period.week_1)
                                         Text("1 month").tag(Period.month_1)
                                         Text("3 months").tag(Period.month_3)
@@ -71,20 +79,41 @@ struct ChartsView: View {
                                     }
                                 }
                                 .task {
-                                    albums = await updateTopAlbums(period: topAlbumsSelectedPeriod.rawValue)
-                                    print(albums)
+                                    albums = await updateTopAlbums(period: topSelectedPeriod.rawValue)
                                 }
-                                .onChange(of: topAlbumsSelectedPeriod) {
+                                .onChange(of: topSelectedPeriod) {
                                     Task {
-                                        albums = await updateTopAlbums(period: topAlbumsSelectedPeriod.rawValue)
-                                        print(albums)
+                                        albums = await updateTopAlbums(period: topSelectedPeriod.rawValue)
                                     }
                                 }
                                 
                                 Spacer()
+                                
+                                HStack {
+                                    Text("Top Artists")
+                                        .font(.headline)
+                                    
+                                    Spacer()
+                                }
+                                .padding(.horizontal, 20)
+                                
                                 VStack(spacing: 5) {
                                     // Top Artists
+                                    if !(artists.isEmpty) {
+                                        ForEach(artists) { artist in
+                                            TopArtistRow(artist: artist)
+                                        }
+                                    }
                                 }
+                                .task {
+                                    artists = await updateTopArtists(period: topSelectedPeriod.rawValue)
+                                }
+                                .onChange(of: topSelectedPeriod) {
+                                    Task {
+                                        artists = await updateTopArtists(period: topSelectedPeriod.rawValue)
+                                    }
+                                }
+                                
                                 Spacer()
                                 VStack(spacing: 5) {
                                     // Top Tracks
@@ -98,7 +127,7 @@ struct ChartsView: View {
                     }
                      */
                 }
-                .navigationTitle("Top Albums")
+                .navigationTitle("Top Rankings")
             }
         }
         .sheet(isPresented: $showSettings) {

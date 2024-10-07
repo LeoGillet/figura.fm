@@ -48,3 +48,31 @@ func requestAndDecodeTopAlbums(user: String, period: String) async throws -> Las
     let response = try decoder.decode(LastFMAPITopAlbumsResponse.self, from: data)
     return response.topalbums
 }
+
+func requestAndDecodeTopArtists(user: String, period: String) async throws -> LastFMAPITopArtists {
+    let endpoint = "/2.0/?method=user.gettopartists&user=\(user)&period=\(period)&limit=10&format=json"
+    guard let data: Data = try await lastfmRequest(endpoint: endpoint) else {
+        fatalError("No Data retrieved")
+    }
+    
+    let decoder = JSONDecoder()
+    let response = try decoder.decode(LastFMAPITopArtistsResponse.self, from: data)
+    return response.topartists
+}
+
+func musicbrainzRequest(endpoint: String) async throws -> Data? {
+    print("Starting lastfmRequest with endpoint \(endpoint)")
+    var userAgent: String = "Figura/0.3d ( leo@leogillet.com )"
+    let apiURL: String = "https://musicbrainz.org/ws"
+    
+    guard let url = URL(string: "\(apiURL)\(endpoint)") else { fatalError("URL entered is invalid") }
+    
+    var urlRequest = URLRequest(url: url)
+    urlRequest.httpMethod = "GET"
+    urlRequest.setValue(userAgent, forHTTPHeaderField: "User-Agent")
+    
+    let (data, response) = try await URLSession.shared.data(for: urlRequest)
+    guard (response as? HTTPURLResponse)?.statusCode == 200 else {fatalError("Error occured during request: \(url)")}
+    print("musicbrainzRequest: \(url) returned \(String(describing: (response as? HTTPURLResponse)?.statusCode)): \(data)")
+    return data
+}

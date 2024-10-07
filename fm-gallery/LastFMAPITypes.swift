@@ -93,7 +93,7 @@ struct LastFMAPITopAlbumsArtist: Codable {
     let url: String
 }
 
-struct LastFMAPITopAlbumsAttr: Codable {
+struct LastFMAPITopAttr: Codable {
     let rank: String
 }
 
@@ -105,7 +105,7 @@ struct LastFMAPITopAlbumsAlbum: Codable, Identifiable {
     let mbid: String
     let url: String
     let playcount: String
-    let attr: LastFMAPITopAlbumsAttr
+    let attr: LastFMAPITopAttr
     
     private enum CodingKeys: String, CodingKey {
         case name, artist, mbid, url, playcount
@@ -128,5 +128,38 @@ struct LastFMAPITopAlbumsResponse: Codable {
     
     private enum CodingKeys: String, CodingKey {
         case topalbums
+    }
+}
+
+struct LastFMAPITopArtistsArtist: Codable, Identifiable {
+    var id: String { "\(name) (\(mbid))" }
+    let name: String
+    let mbid: String
+    let url: String
+    let playcount: String
+    let images: [LastFMAPIImage]
+    let attr: LastFMAPITopAttr
+    
+    private enum CodingKeys: String, CodingKey {
+        case name, mbid, url, playcount
+        case images = "image"
+        case attr = "@attr"
+    }
+}
+
+struct LastFMAPITopArtists: Codable {
+    let artists: [LastFMAPITopArtistsArtist]
+    
+    private enum CodingKeys: String, CodingKey {
+        case artists = "artist"
+    }
+}
+
+struct LastFMAPITopArtistsResponse: Codable {
+    let topartists: LastFMAPITopArtists
+    @CodableIgnored var attr: LastFMAPIRequestAttr?
+    
+    private enum CodingKeys: String, CodingKey {
+        case topartists
     }
 }

@@ -16,6 +16,8 @@
 		122436882C9C63A50020A178 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 122436872C9C63A50020A178 /* LaunchScreen.storyboard */; };
 		1224F9B62CA2FA4500FFA092 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12178C3B2CA2F5690027D3FB /* ViewModel.swift */; };
 		125F10332CA56AD9000A49E3 /* Assets.xcassets in Sources */ = {isa = PBXBuildFile; fileRef = 12B661492C8F7F1B0095D2AB /* Assets.xcassets */; };
+		1289602A2CB4092E00E42625 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128960292CB4092C00E42625 /* Artist.swift */; };
+		1289602C2CB40D0B00E42625 /* MusicBrainzAPITypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1289602B2CB40D0500E42625 /* MusicBrainzAPITypes.swift */; };
 		12AF48872C9C239400FFD158 /* ChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AF48862C9C238C00FFD158 /* ChartsView.swift */; };
 		12AF48892C9C258D00FFD158 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AF48882C9C258A00FFD158 /* Components.swift */; };
 		12B661462C8F7F190095D2AB /* figurafmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B661452C8F7F190095D2AB /* figurafmApp.swift */; };
@@ -45,6 +47,8 @@
 		122436802C9C40060020A178 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		122436822C9C40900020A178 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		122436872C9C63A50020A178 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		128960292CB4092C00E42625 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		1289602B2CB40D0500E42625 /* MusicBrainzAPITypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicBrainzAPITypes.swift; sourceTree = "<group>"; };
 		12AF48862C9C238C00FFD158 /* ChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsView.swift; sourceTree = "<group>"; };
 		12AF48882C9C258A00FFD158 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 		12B661422C8F7F190095D2AB /* fm-gallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fm-gallery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,12 +107,14 @@
 		12B661442C8F7F190095D2AB /* fm-gallery */ = {
 			isa = PBXGroup;
 			children = (
+				128960292CB4092C00E42625 /* Artist.swift */,
 				122436872C9C63A50020A178 /* LaunchScreen.storyboard */,
 				12178C372CA2F1C30027D3FB /* Album.swift */,
 				12AF48862C9C238C00FFD158 /* ChartsView.swift */,
 				12AF48882C9C258A00FFD158 /* Components.swift */,
 				12B661452C8F7F190095D2AB /* figurafmApp.swift */,
 				12178C332CA2F0970027D3FB /* LastFMAPITypes.swift */,
+				1289602B2CB40D0500E42625 /* MusicBrainzAPITypes.swift */,
 				12178C352CA2F0DA0027D3FB /* PropertyWrapper.swift */,
 				122436802C9C40060020A178 /* Request.swift */,
 				12B661472C8F7F190095D2AB /* ScrobblesView.swift */,
@@ -259,12 +265,14 @@
 				125F10332CA56AD9000A49E3 /* Assets.xcassets in Sources */,
 				1224F9B62CA2FA4500FFA092 /* ViewModel.swift in Sources */,
 				12178C382CA2F1C60027D3FB /* Album.swift in Sources */,
+				1289602A2CB4092E00E42625 /* Artist.swift in Sources */,
 				1224367D2C9C2A930020A178 /* SettingsView.swift in Sources */,
 				12178C362CA2F0DD0027D3FB /* PropertyWrapper.swift in Sources */,
 				122436832C9C40910020A178 /* Settings.swift in Sources */,
 				12B661482C8F7F190095D2AB /* ScrobblesView.swift in Sources */,
 				12AF48892C9C258D00FFD158 /* Components.swift in Sources */,
 				12D18EE42C9D8C4F006DA5AE /* Track.swift in Sources */,
+				1289602C2CB40D0B00E42625 /* MusicBrainzAPITypes.swift in Sources */,
 				122436812C9C40080020A178 /* Request.swift in Sources */,
 				12178C342CA2F0A30027D3FB /* LastFMAPITypes.swift in Sources */,
 				12B661462C8F7F190095D2AB /* figurafmApp.swift in Sources */,

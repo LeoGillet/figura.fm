@@ -45,3 +45,22 @@ class TopAlbumViewModel: ObservableObject {
         }
     }
 }
+
+@MainActor
+class TopArtistViewModel: ObservableObject {
+    @Published var artists: [LastFMAPITopArtistsArtist] = []
+    @Published var errorMessage: String? = nil
+    @EnvironmentObject var settings: Settings
+    
+    func loadTopArtists(user: String, period: String) async {
+        do {
+            if (user == "") {
+                fatalError("No username entered in settings")
+            }
+            let topAlbums = try await requestAndDecodeTopArtists(user: user, period: period)
+            self.artists = topAlbums.artists
+        } catch {
+            self.errorMessage = String(describing: error)
+        }
+    }
+}
